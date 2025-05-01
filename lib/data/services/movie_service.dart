@@ -35,8 +35,8 @@ class MovieService {
       }
 
       movies.sort((a, b) {
-        int yearCompare = (a.anoLancamento ?? 0).compareTo(
-          b.anoLancamento ?? 0,
+        int yearCompare = (b.anoLancamento ?? 0).compareTo(
+          a.anoLancamento ?? 0,
         );
         if (yearCompare != 0) {
           return yearCompare;
