@@ -70,24 +70,37 @@ class MovieCard extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        const SizedBox(height: 8),
                         Text(
-                          filme.titulo,
+                          "${filme.generosNomes}",
+                          style: const TextStyle(
+                            color: Color.fromRGBO(254, 190, 0, 1),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const Padding(padding: EdgeInsets.only(bottom: 8)),
+                        Text(
+                          "${filme.titulo} (${filme.anoLancamento})",
                           style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: 18,
                           ),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
+                        const Padding(padding: EdgeInsets.only(bottom: 4)),
                         const SizedBox(height: 8),
                         Text(
-                          '${filme.anoLancamento ?? ''} - ${filme.sinopse}',
+                          'Sinopse: ${filme.sinopse}',
                           style: const TextStyle(
                             color: Colors.white70,
                             fontSize: 14,
                           ),
-                          maxLines: 3,
+                          maxLines: 5,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ],
